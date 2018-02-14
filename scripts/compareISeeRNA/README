@@ -1,0 +1,15 @@
+Comparison workflow
+
+1- Get the pcts and linc test ids
+2- Get ids fasta info 
+  * perl infoFromFasta.pl ../../mouse-redo/ncrna_vega68.fa lincs_test.csv lincs_test.fa
+3- Conver test fasta to gff
+  * perl fastaToGff.pl lincs_test.fa lincs_test.gff
+4- Use gff output as iSeeRNA input (http://137.189.133.71/iSeeRNA/webserver/iseerna.pl)
+5- Calculate percentage of correct discriminated transcripts
+
+
+
+
+
+

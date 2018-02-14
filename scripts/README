@@ -1,0 +1,12 @@
+
+
+Running test
+
+./pipeline.sh -filter=y -pct=../mouse-redo/cdna_vega68.fa -linc=../mouse-redo/ncrna_vega68.fa -pctGroup=0 > log0
+
+./pipeline.sh -filter=y -pct=../mouse-redo/cdna_vega68.fa -linc=../mouse-redo/ncrna_vega68.fa -pctGroup=1 > log1 && ./pipeline.sh -filter=y -pct=../mouse-redo/cdna_vega68.fa -linc=../mouse-redo/ncrna_vega68.fa -pctGroup=2 > log2 && ./pipeline.sh -filter=y -pct=../mouse-redo/cdna_vega68.fa -linc=../mouse-redo/ncrna_vega68.fa -pctGroup=3 > log3 && ./pipeline.sh -filter=y -pct=../mouse-redo/cdna_vega68.fa -linc=../mouse-redo/ncrna_vega68.fa -pctGroup=4 > log4
+
+
+
+
+

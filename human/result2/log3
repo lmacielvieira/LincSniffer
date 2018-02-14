@@ -1,0 +1,252 @@
+lucas@lucas:~/Desktop/FInal Diss/scripts$ ./pipeline.sh -filter=y -pct=../human/cdna_vega68.fa -linc=../human/ncrna_vega68.fa -pctGroup=2
+Filter option: 
+�
+Training size: 7276
+Test size: 9095
+PCT group: 2
+PCT  - start: 18192    middle: 25468  end: 27287
+LINC - start: 2   middle: 7276 end: 9095
+resultFolder: result2
+Loading required package: e1071
+Loading required package: randomForest
+randomForest 4.6-12
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: ROCR
+Loading required package: gplots
+
+Attaching package: ‘gplots’
+
+The following object is masked from ‘package:stats’:
+
+    lowess
+
+Loading required package: methods
+Loading required package: party
+Loading required package: grid
+Loading required package: mvtnorm
+Loading required package: modeltools
+Loading required package: stats4
+Loading required package: strucchange
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Loading required package: sandwich
+Loading required package: mlbench
+Loading required package: caret
+Loading required package: lattice
+Loading required package: ggplot2
+
+Attaching package: ‘ggplot2’
+
+The following object is masked from ‘package:randomForest’:
+
+    margin
+
+Loading required package: class
+Loading required package: pROC
+Type 'citation("pROC")' for a citation.
+
+Attaching package: ‘pROC’
+
+The following objects are masked from ‘package:stats’:
+
+    cov, smooth, var
+
+[1] "Training and Test set loaded with success"
+[1] "Building svm model"
+[1] "SVM tuned."
+[1] "Cost:"
+[1] 1
+[1] "Gamma:"
+[1] 0.5
+[1] "SVM model built."
+Accuracy:	 0.89 
+Precision:	 0.89 
+Recall:		 0.9 
+F-measure:	 0.89 
+[1] "Building RF model"
+[1] "RF model tuned."
+[1] "mtry:"
+[1] 11
+[1] "RF model built."
+null device 
+          1 
+[1] "Feature importance:\n"
+null device 
+          1 
+Confusion Matrix and Statistics
+
+          Reference
+Prediction linc  pct
+      linc 1702  203
+      pct   118 1617
+                                          
+               Accuracy : 0.9118          
+                 95% CI : (0.9021, 0.9208)
+    No Information Rate : 0.5             
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.8236          
+ Mcnemar's Test P-Value : 2.753e-06       
+                                          
+            Sensitivity : 0.9352          
+            Specificity : 0.8885          
+         Pos Pred Value : 0.8934          
+         Neg Pred Value : 0.9320          
+             Prevalence : 0.5000          
+         Detection Rate : 0.4676          
+   Detection Prevalence : 0.5234          
+      Balanced Accuracy : 0.9118          
+                                          
+       'Positive' Class : linc            
+                                          
+Accuracy:	 0.91 
+Precision:	 0.94 
+Recall:		 0.89 
+F-measure:	 0.91 
+[1] "Building Ctree model"
+null device 
+          1 
+[1] "Ctree tuned"
+[1] "Max Depth:"
+[1] 5
+[1] "Min Criterion"
+[1] 0.95
+[1] "Ctree built"
+null device 
+          1 
+Confusion Matrix and Statistics
+
+          Reference
+Prediction linc  pct
+      linc 1682  231
+      pct   138 1589
+                                          
+               Accuracy : 0.8986          
+                 95% CI : (0.8884, 0.9082)
+    No Information Rate : 0.5             
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.7973          
+ Mcnemar's Test P-Value : 1.673e-06       
+                                          
+            Sensitivity : 0.9242          
+            Specificity : 0.8731          
+         Pos Pred Value : 0.8792          
+         Neg Pred Value : 0.9201          
+             Prevalence : 0.5000          
+         Detection Rate : 0.4621          
+   Detection Prevalence : 0.5255          
+      Balanced Accuracy : 0.8986          
+                                          
+       'Positive' Class : linc            
+                                          
+Accuracy:	 0.9 
+Precision:	 0.92 
+Recall:		 0.88 
+F-measure:	 0.9 
+[1] "Building KNN model"
+k-Nearest Neighbors 
+
+14552 samples
+   32 predictors
+    2 classes: 'linc', 'pct' 
+
+Pre-processing: centered (32), scaled (32) 
+Resampling: Cross-Validated (10 fold, repeated 3 times) 
+Summary of sample sizes: 13096, 13097, 13097, 13096, 13098, 13097, ... 
+Resampling results across tuning parameters:
+
+  k   Accuracy   Kappa    
+   5  0.8887899  0.7775828
+   7  0.8880799  0.7761631
+   9  0.8865910  0.7731851
+  11  0.8865677  0.7731388
+  13  0.8874612  0.7749254
+  15  0.8870944  0.7741922
+  17  0.8878047  0.7756127
+  19  0.8871406  0.7742846
+  21  0.8873008  0.7746052
+  23  0.8870030  0.7740097
+  25  0.8865445  0.7730926
+  27  0.8865904  0.7731843
+  29  0.8866820  0.7733673
+  31  0.8860634  0.7721301
+  33  0.8854220  0.7708473
+  35  0.8853991  0.7708017
+  37  0.8849639  0.7699315
+  39  0.8852158  0.7704353
+  41  0.8853076  0.7706189
+  43  0.8848266  0.7696569
+
+Accuracy was used to select the optimal model using  the largest value.
+The final value used for the model was k = 5. 
+null device 
+          1 
+[1] "Knn model tuned"
+[1] "K:"
+[1] 5
+Confusion Matrix and Statistics
+
+          Reference
+Prediction linc  pct
+      linc 1710  266
+      pct   110 1554
+                                          
+               Accuracy : 0.8967          
+                 95% CI : (0.8864, 0.9064)
+    No Information Rate : 0.5             
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.7934          
+ Mcnemar's Test P-Value : 1.311e-15       
+                                          
+            Sensitivity : 0.9396          
+            Specificity : 0.8538          
+         Pos Pred Value : 0.8654          
+         Neg Pred Value : 0.9339          
+             Prevalence : 0.5000          
+         Detection Rate : 0.4698          
+   Detection Prevalence : 0.5429          
+      Balanced Accuracy : 0.8967          
+                                          
+       'Positive' Class : linc            
+                                          
+Accuracy:	 0.9 
+Precision:	 0.94 
+Recall:		 0.87 
+F-measure:	 0.9 
+[1] "Building consensus ensemble model"
+    true
+pred linc  pct
+   1 1553  143
+   2   52 1488
+Accuracy:	 0.94 
+Precision:	 0.97 
+Recall:		 0.92 
+F-measure:	 0.94 
+[1] "Building Majority ensemble model"
+  5 
+pct 
+Levels: linc pct
+   4 
+linc 
+Levels: linc pct
+    true
+pred linc  pct
+   1 1661  178
+   2   91 1591
+Accuracy:	 0.92 
+Precision:	 0.95 
+Recall:		 0.9 
+F-measure:	 0.93 
+null device 
+          1 
+[1] "AUC model:"
+[1] 0.9399625
+
